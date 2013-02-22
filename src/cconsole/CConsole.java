@@ -1,22 +1,22 @@
-package Console;
+package cconsole;
 import java.awt.Color;
 import java.awt.Font;
 
 /**
- * Static class to use {@link ConsoleGUI}
+ * Static class to use {@link CConsoleGUI}
  * Implements print, warn and debug to display text. 
  * 
  * @author Ornicare
  *
  */
-public abstract class Console {
+public abstract class CConsole {
 	
-	private static ConsoleGUI console;
+	private static CConsoleGUI console;
 	@SuppressWarnings("unused")
-	private static ConsoleOut outInterceptor;
+	private static CConsoleOut outInterceptor;
 	@SuppressWarnings("unused")
-	private static ConsoleErr errInterceptor;
-	
+	private static CConsoleErr errInterceptor;
+
 	/**
 	 * Text's color for the debug mode. Modifiable.
 	 */
@@ -43,7 +43,7 @@ public abstract class Console {
 	private static Boolean debug = true;
 	
 	public static void setDebug(Boolean debug) {
-		Console.debug = debug;
+		CConsole.debug = debug;
 	}
 
 	public static Color getInfoColor() {
@@ -51,24 +51,24 @@ public abstract class Console {
 	}
 
 	public static void setDebugColor(Color debugColor) {
-		Console.debugColor = debugColor;
+		CConsole.debugColor = debugColor;
 	}
 
 	public static void setWarnColor(Color warnColor) {
-		Console.warnColor = warnColor;
+		CConsole.warnColor = warnColor;
 	}
 
 	public static void setDebugFont(Font debugFont) {
-		Console.debugFont = debugFont;
+		CConsole.debugFont = debugFont;
 	}
 
 
 	public static void setWarnFont(Font warnFont) {
-		Console.warnFont = warnFont;
+		CConsole.warnFont = warnFont;
 	}
 
 	/**
-	 * If @see {@link Console#debug} is true, call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values for the debug mode.
+	 * If @see {@link CConsole#debug} is true, call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values for the debug mode.
 	 * 
 	 * @param o the object to print
 	 */
@@ -77,7 +77,7 @@ public abstract class Console {
 	}
 	
 	/**
-	 * If @see {@link Console#debug} is true, call {@link Console#println(Object, Font, Color)} with all non-given args to their defaults values for the debug mode.
+	 * If @see {@link CConsole#debug} is true, call {@link CConsole#println(Object, Font, Color)} with all non-given args to their defaults values for the debug mode.
 	 * 
 	 * @param o the object to print
 	 */
@@ -86,7 +86,7 @@ public abstract class Console {
 	}
 
 	/**
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values for the warning mode.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values for the warning mode.
 	 * 
 	 * @param o the object to print
 	 */
@@ -95,7 +95,7 @@ public abstract class Console {
 	}
 	
 	/**
-	 * Call {@link Console#println(Object, Font, Color)} with all non-given args to their defaults values for the warning mode.
+	 * Call {@link CConsole#println(Object, Font, Color)} with all non-given args to their defaults values for the warning mode.
 	 * 
 	 * @param o the object to print
 	 */
@@ -104,10 +104,10 @@ public abstract class Console {
 	}
 	
 	/**
-	 * Call a @see {@link ConsoleGUI#addText(String, Font, Color)} to print <code>o+append</code>
+	 * Call a @see {@link CConsoleGUI#addText(String, Font, Color)} to print <code>o+append</code>
 	 * 
 	 * @param o the object to print
-	 * @param append the string to add after o (use to differentiate @see {@link Console#println(Object, Font, Color)} from @see {@link Console#print(Object, String, Font, Color)}
+	 * @param append the string to add after o (use to differentiate @see {@link CConsole#println(Object, Font, Color)} from @see {@link CConsole#print(Object, String, Font, Color)}
 	 * @param font <code>o</code>'s font
 	 * @param color <code>o</code>'s color
 	 */
@@ -126,7 +126,7 @@ public abstract class Console {
 	}
 
 	/**
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -135,7 +135,7 @@ public abstract class Console {
 	}
 	
 	/**
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -144,7 +144,7 @@ public abstract class Console {
 	}
 	
 	/**
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -153,7 +153,7 @@ public abstract class Console {
 	}
 	
 	/**
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -164,7 +164,7 @@ public abstract class Console {
 
 	/**
 	 * Use to automatically a '\n' to the string version of o
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -174,7 +174,7 @@ public abstract class Console {
 	
 	/**
 	 * Use to automatically a '\n' to the string version of o
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -184,7 +184,7 @@ public abstract class Console {
 	
 	/**
 	 * Use to automatically a '\n' to the string version of o
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -194,7 +194,7 @@ public abstract class Console {
 	
 	/**
 	 * Use to automatically a '\n' to the string version of o
-	 * Call {@link Console#print(Object, Font, Color)} with all non-given args to their defaults values.
+	 * Call {@link CConsole#print(Object, Font, Color)} with all non-given args to their defaults values.
 	 * 
 	 * @param o the object to print
 	 */
@@ -211,8 +211,8 @@ public abstract class Console {
 		warnColor = Color.YELLOW;
 		debugFont = console.getDefaultFont();
 		warnFont = console.getDefaultFont();
-		outInterceptor = new ConsoleOut(System.out,console);
-		errInterceptor = new ConsoleErr(System.err,console);
+		outInterceptor = new CConsoleOut(System.out,console);
+		errInterceptor = new CConsoleErr(System.err,console);
 		
 	}
 
@@ -220,7 +220,7 @@ public abstract class Console {
 	 * Initialize the console. Create a gui and set all variables.
 	 */
 	public static void load() {
-		console = new ConsoleGUI();
+		console = new CConsoleGUI();
 		loadFontProperties();
 	}
 

@@ -1,4 +1,4 @@
-package Console;
+package cconsole;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -14,19 +14,19 @@ import javax.swing.text.StyledDocument;
 
 /**
  * Generate a new GUI for the console.
- * Used to print text with @see {@link ConsoleGUI#addText(String, Font, Color)}
+ * Used to print text with @see {@link CConsoleGUI#addText(String, Font, Color)}
  * 
  * @author Ornicare
  *
  */
-public class ConsoleGUI extends JFrame {
+public class CConsoleGUI extends JFrame {
 	
 	/**
      * Console's text font. 
      * Default to "Courrier", 12 pts
      * 
-     * @see ConsoleGUI#setDefaultFont()
-     * @see ConsoleGUI#getDefaultFont(Font)
+     * @see CConsoleGUI#setDefaultFont()
+     * @see CConsoleGUI#getDefaultFont(Font)
      */
 	private Font defaultFont = new Font("Courrier",Font.PLAIN, 12);
 	
@@ -34,8 +34,8 @@ public class ConsoleGUI extends JFrame {
      * Console's text color. 
      * Defaukt to white
      * 
-     * @see ConsoleGUI#setDefaultColor()
-     * @see ConsoleGUI#getDefaultColor(Color)
+     * @see CConsoleGUI#setDefaultColor()
+     * @see CConsoleGUI#getDefaultColor(Color)
      */
 	private Color defaultColor = Color.WHITE;
 	
@@ -43,16 +43,16 @@ public class ConsoleGUI extends JFrame {
      * Console's text background. 
      * Default to black
      * 
-     * @see ConsoleGUI#getDefaultColorBackground()
-     * @see ConsoleGUI#setDefaultColorBackground(Color)
+     * @see CConsoleGUI#getDefaultColorBackground()
+     * @see CConsoleGUI#setDefaultColorBackground(Color)
      */
 	private Color defaultColorBackground = Color.BLACK;
 	
 	/**
-     * Content of the @see {@link ConsoleGUI#textPane}
+     * Content of the @see {@link CConsoleGUI#textPane}
      * 
-     * @see ConsoleGUI#getDefaultColorBackground()
-     * @see ConsoleGUI#setDefaultColorBackground(Color)
+     * @see CConsoleGUI#getDefaultColorBackground()
+     * @see CConsoleGUI#setDefaultColorBackground(Color)
      */
 	private StyledDocument doc;
 	
@@ -92,7 +92,7 @@ public class ConsoleGUI extends JFrame {
      * Create a new GUI for the Console with defaults font, display text's color, and background.
      * </p>
      */
-	public ConsoleGUI() {
+	public CConsoleGUI() {
 		
 		this.setTitle("Console");
 		this.setSize(500, 500);
@@ -118,7 +118,7 @@ public class ConsoleGUI extends JFrame {
 	/**
 	 * <code>font</code> defaults to {@link defaultFont}.
 	 *
-	 * @see ConsoleGUI#addText(String ,Font, Color)
+	 * @see CConsoleGUI#addText(String ,Font, Color)
 	 */
 	public void addText(String text) {
 		addText(text, defaultFont , defaultColor);
@@ -127,7 +127,7 @@ public class ConsoleGUI extends JFrame {
 	/**
 	 * <code>color</code> defaults to {@link defaultColor}.
 	 *
-	 * @see ConsoleGUI#addText(String ,Font, Color)
+	 * @see CConsoleGUI#addText(String ,Font, Color)
 	 */
 	public void addText(String text, Color color) {
 		addText(text, defaultFont, color);
@@ -137,7 +137,7 @@ public class ConsoleGUI extends JFrame {
 	 * <code>font</code> defaults to {@link defaultFont}.
 	 * <code>color</code> defaults to {@link defaultColor}.
 	 *
-	 * @see ConsoleGUI#addText(String ,Font, Color)
+	 * @see CConsoleGUI#addText(String ,Font, Color)
 	 */
 	public void addText(String text, Font font) {
 		addText(text, font, defaultColor);
