@@ -16,7 +16,7 @@ public class Example {
 		CConsole.load();
 
 		//type some text in
-		CConsole.println("It's a test !");
+		for(int i =0;i<10000000;i++) CConsole.println("It's a test !");
 		
 		//and use some color
 		CConsole.println("Orange text",Color.ORANGE);
@@ -48,12 +48,13 @@ public class Example {
 		
 		//and finally, destroy your eyes !
 		s = "I'm here to destroy your eyes !";
-		for(int i =0; i<s.length();i++) CConsole.print(s.charAt(i),new Font("Courier", Font.PLAIN, (int)(100*Math.cos(i))), new Color(255/s.length()*i,100,255/(i+1)));
+		for(int i =0; i<s.length();i++) CConsole.print(s.charAt(i),new Font("Courier", Font.PLAIN, (int)(70*Math.cos(i))), new Color(255/s.length()*i,100,255/(i+1)));
 		CConsole.println("");
 		
 		//And System.err and System.out are also catch !
 		System.out.println("I'm a console message");
 		System.err.println("I'm an error message");
+		System.out.printf("%s a test","It's");
 	}
 
 }
