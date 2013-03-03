@@ -22,6 +22,11 @@ import javax.swing.text.StyledDocument;
 public class CConsoleGUI extends JFrame {
 	
 	/**
+	 * Number maximum of total characters
+	 */
+	private int maxChar = 300*300;
+	
+	/**
      * Console's text font. 
      * Default to "Courrier", 12 pts
      * 
@@ -151,10 +156,6 @@ public class CConsoleGUI extends JFrame {
 	 * @param color <code>text</code>'s color
 	 */
 	public void addText(String text, Font font, Color color) {
-		//textPane.setFont(font);
-		//setDefaultColor(color);
-		//textPane.setForeground(color);
-		//textPane.append(text+color.toString());
 		Style style = textPane.addStyle("I'm a Style", null);
         StyleConstants.setForeground(style, color);
         StyleConstants.setFontFamily(style, font.getFamily());
@@ -163,10 +164,21 @@ public class CConsoleGUI extends JFrame {
         StyleConstants.setItalic(style, (font.getStyle() & Font.ITALIC) != 0);
         StyleConstants.setBold(style, (font.getStyle() & Font.BOLD) != 0);
 
-        try { doc.insertString(doc.getLength(), text,style); }
+        try {
+        		doc.insertString(doc.getLength(), text,style); 
+        		if(doc.getLength()>maxChar) {
+        			doc.remove(0, doc.getLength()-maxChar);
+        		}
+        	}
         catch (BadLocationException e){}
+        
 
 	}
+
+	public void setMaxChar(int maxChar) {
+		this.maxChar = maxChar;
+	}
+
 
 	/**
 	 * Equivalent of WindowConstants.DISPOSE_ON_CLOSE

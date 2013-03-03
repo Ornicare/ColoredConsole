@@ -73,6 +73,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void debug(Object o) {
+		if(console==null) System.out.println(o);
 		if(debug) print(o,debugFont,debugColor);
 	}
 	
@@ -82,6 +83,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void debugln(Object o) {
+		if(console==null) System.out.println(o);
 		if(debug) println(o,debugFont,debugColor);
 	}
 
@@ -91,6 +93,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void warn(Object o) {
+		if(console==null) System.out.println(o);
 		print(o,warnFont,warnColor);
 	}
 	
@@ -100,6 +103,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void warnln(Object o) {
+		if(console==null) System.out.println(o);
 		println(o,warnFont,warnColor);
 	}
 	
@@ -131,6 +135,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void print(Object o) {
+		if(console==null) System.out.println(o);
 		print(o,"", console.getDefaultFont(), console.getDefaultColor());
 	}
 	
@@ -140,6 +145,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void print(Object o, Color color) {
+		if(console==null) System.out.println(o);
 		print(o,"", console.getDefaultFont(), color);
 	}
 	
@@ -149,6 +155,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void print(Object o, Font font) {
+		if(console==null) System.out.println(o);
 		print(o,"", font, console.getDefaultColor());
 	}
 	
@@ -158,6 +165,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void print(Object o, Font font, Color color) {
+		if(console==null) System.out.println(o);
 		print(o,"",font, color);
 	}
 	
@@ -169,6 +177,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void println(Object o) {
+		if(console==null) System.out.println(o);
 		print(o,"\n", console.getDefaultFont(), console.getDefaultColor());
 	}
 	
@@ -179,6 +188,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void println(Object o, Color color) {
+		if(console==null) System.out.println(o);
 		print(o,"\n", console.getDefaultFont(), color);
 	}
 	
@@ -189,6 +199,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void println(Object o, Font font) {
+		if(console==null) System.out.println(o);
 		print(o,"\n", font, console.getDefaultColor());
 	}
 	
@@ -199,6 +210,7 @@ public abstract class CConsole {
 	 * @param o the object to print
 	 */
 	public static void println(Object o, Font font, Color color) {
+		if(console==null) System.out.println(o);
 		print(o,"\n",font, color);
 	}
 	
@@ -230,5 +242,9 @@ public abstract class CConsole {
 	public static void close() {
 		if(console != null) console.close();
 		console = null;
+	}
+	
+	public void setMaxChar(int maxChar) {
+		if(console!=null) console.setMaxChar(maxChar);
 	}
 }

@@ -15,8 +15,10 @@ public class Example {
 		//load the console
 		CConsole.load();
 
-		//type some text in
-		for(int i =0;i<10000000;i++) CConsole.println("It's a test !");
+		//type some text in (len test)
+		//for(int i =0;i<5000;i++) CConsole.println("It's suisqdiugsqduhouqsdhuosqdhuosqdohusqdhuosqdddddddddddddddddddddddddddddddsqdddddddddddddddddddddddddddddddddddddddda test !"+i,new Color((int)(Math.abs(255*Math.cos(i))),(int)(Math.abs(255*Math.cos(i))),100));
+		CConsole.println("It's a test !");
+		
 		
 		//and use some color
 		CConsole.println("Orange text",Color.ORANGE);
